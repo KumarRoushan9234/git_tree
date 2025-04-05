@@ -114,7 +114,7 @@ export async function getRepoTreeFromLink(req, res) {
   }
 }
 
-// tking a lot of time => get the content file wise 
+// taking a lot of time => get the content file wise 
 export async function getRepoFileContents(req, res) {
   const { url } = req.body;
 
@@ -187,7 +187,6 @@ export async function getRepoFileContents(req, res) {
     res.status(500).json({ error: err.message });
   }
 }
-
 
 // single file content 
 export async function getSingleFileContent(req, res) {
