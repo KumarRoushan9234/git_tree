@@ -1,16 +1,17 @@
 import express from 'express';
+import { getRepoTree, parseGitHubLink } from '../controllers/githubController.js';
 import {
   getUserReposFromInput,
-  getRepoTreeFromLink,
-  getRepoFileContents,
-  getSingleFileContent,
+  getRepoTreeFromLink
 } from '../controllers/githubController.js';
 
 const router = express.Router();
 
+router.get('/repos/:owner/:repo/tree', getRepoTree);
+
+router.post('/parse-link', parseGitHubLink);
+
 router.post('/user-repos', getUserReposFromInput);
 router.post('/repo-tree', getRepoTreeFromLink);
-router.post('/repo-files', getRepoFileContents);
-router.post('/repo-file-content', getSingleFileContent);
 
 export default router;
