@@ -145,8 +145,9 @@ export async function getRepoFileContents(req, res) {
       '.png', '.jpg', '.jpeg', '.gif', '.bmp', '.svg', '.ico',
       '.pdf', '.doc', '.docx', '.ppt', '.pptx', '.xls', '.xlsx',
       '.zip', '.rar', '.7z', '.tar', '.gz', '.mp3', '.mp4', '.mov', '.avi',
-      '.exe', '.dll', '.bin', '.iso'
+      '.exe', '.dll', '.bin', '.iso',
     ];
+    // '.txt',
 
     const files = treeRes.data.tree.filter(item => {
       if (item.type !== 'blob') return false;
